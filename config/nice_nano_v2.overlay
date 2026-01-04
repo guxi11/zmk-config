@@ -1,3 +1,5 @@
-&led_strip {
-    chain-length = <27>;
+&spi1 {
+    ws2812@0 {
+        chain-length = <27>;
+    };
 };
