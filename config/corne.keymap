@@ -5,10 +5,10 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     combos {
@@ -41,10 +41,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R                   &kp T          &kp Y       &kp U        &kp I        &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F                   &kp G          &kp H       &kp J        &kp K        &kp L    &kp SEMI  &kp ENTER
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V                   &kp B          &kp N       &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp SQT
-                         &kp LALT  &mt LEFT_COMMAND SPACE  &lt 1 SPACE    &kp ESCAPE  &lt 2 SPACE  &lt 3 SPACE
+&kp TAB    &kp Q  &kp W  &kp E     &kp R                   &kp T          &kp Y      &kp U        &kp I        &kp O    &kp P     &kp BSPC
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F                   &kp G          &kp H      &kp J        &kp K        &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V                   &kp B          &kp N      &kp M        &kp COMMA    &kp DOT  &kp FSLH  &kp ESCAPE
+                         &kp LALT  &mt LEFT_COMMAND SPACE  &lt 1 SPACE    &kp ENTER  &lt 2 SPACE  &lt 3 SPACE
             >;
         };
 
@@ -77,11 +77,12 @@
             // Row 1: BT Clear, BT profiles 0-4, RGB Toggle, RGB Effect+, RGB Hue+, RGB Sat+, RGB Bright+
             // Row 2: RGB On, RGB Effect-, RGB Hue-, RGB Sat-, RGB Bright-
             // Row 3: External Power On/Off/Toggle
+
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4           &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &trans
-&trans      &trans            &trans             &trans             &trans        &trans                 &rgb_ug RGB_ON   &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &trans
-&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans                 &rgb_ug RGB_OFF  &trans           &trans           &trans           &trans           &trans
-                                                 &trans             &trans        &trans                 &trans           &trans           &trans
+&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4    &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI  &rgb_ug RGB_BRI  &trans
+&trans      &trans            &trans             &trans             &trans        &trans          &rgb_ug RGB_ON   &rgb_ug RGB_EFR  &rgb_ug RGB_HUD  &rgb_ug RGB_SAD  &rgb_ug RGB_BRD  &trans
+&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans          &rgb_ug RGB_OFF  &trans           &trans           &trans           &trans           &trans
+                                                 &trans             &trans        &trans          &trans           &trans           &trans
             >;
         };
     };
