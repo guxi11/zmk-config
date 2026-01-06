@@ -45,6 +45,34 @@
         };
     };
 
+    macros {
+        homerow_clicking: homerow_clicking {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>;
+
+            label = "HOMEROW_CLICKING";
+        };
+
+        homerow_scroll: homerow_scroll {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT &kp LEFT_COMMAND>,
+                <&macro_tap>,
+                <&kp S>,
+                <&macro_release>;
+
+            label = "HOMEROW_SCROLL";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -99,6 +127,24 @@
 &trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans          &rgb_ug RGB_OFF  &trans           &trans           &trans           &trans           &trans
                                                  &trans             &trans        &trans          &trans           &trans           &trans
             >;
+        };
+
+        macro_layer {
+            bindings = <
+&trans  &trans  &trans           &trans             &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &homerow_scroll  &trans             &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans           &homerow_clicking  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                 &trans             &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        select_macro {
+            if-layers = <1 2>;
+            then-layer = <4>;
         };
     };
 };
