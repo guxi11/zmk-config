@@ -54,7 +54,8 @@
                 <&kp LEFT_ALT &kp LEFT_COMMAND>,
                 <&macro_tap>,
                 <&kp C>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_ALT &kp LEFT_COMMAND>;
 
             label = "HOMEROW_CLICKING";
         };
@@ -67,7 +68,8 @@
                 <&kp LEFT_ALT &kp LEFT_COMMAND>,
                 <&macro_tap>,
                 <&kp S>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp LEFT_ALT &kp LEFT_COMMAND>;
 
             label = "HOMEROW_SCROLL";
         };
