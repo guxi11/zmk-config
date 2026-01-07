@@ -1,3 +1,12 @@
 // This file is intentionally left empty to avoid conflicts with system defaults.
 // Configuration has been moved to corne.keymap to ensure correct override order.
 
+&pro_micro_i2c {
+    status = "okay";
+};
+
+/ {
+    chosen {
+        zephyr,display = &oled;
+    };
+};
